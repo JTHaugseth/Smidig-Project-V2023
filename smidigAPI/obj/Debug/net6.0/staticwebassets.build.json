@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "u4rv/Et8Z8XMCr5jfGW3BhbQoWwwbsU745z59WWflyU=",
+  "Source": "smidigAPI",
+  "BasePath": "_content/smidigAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "smidigAPI\\wwwroot",
+      "Source": "smidigAPI",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "BasePath": "_content/smidigAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\root.html",
+      "SourceId": "smidigAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "BasePath": "_content/smidigAPI",
+      "RelativePath": "root.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\root.html"
+    },
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\root.js",
+      "SourceId": "smidigAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "BasePath": "_content/smidigAPI",
+      "RelativePath": "root.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\root.js"
+    }
+  ]
+}
