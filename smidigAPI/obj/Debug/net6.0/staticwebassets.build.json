@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u4rv/Et8Z8XMCr5jfGW3BhbQoWwwbsU745z59WWflyU=",
+  "Hash": "LJ4Zxo0XdRar5JnXurScTIE4d8V9Er23fuYpeLMTn5g=",
   "Source": "smidigAPI",
   "BasePath": "_content/smidigAPI",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\Overlay.JPG",
+      "SourceId": "smidigAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "BasePath": "_content/smidigAPI",
+      "RelativePath": "images/Overlay.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Overlay.JPG"
+    },
     {
       "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\root.html",
       "SourceId": "smidigAPI",
