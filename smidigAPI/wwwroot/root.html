@@ -27,6 +27,12 @@
                 <p>Create a new store package:</p>
                 <input type="text" id="newPackageTitle" placeholder="Title:">
                 <br>
+                <select id="newPackageType">
+                    <option value="Overlay">Overlay</option>
+                    <option value="Sound">Sound</option>
+                    <option value="Effect">Effect</option>
+                </select>
+                <br>
                 <input type="text" id="newPackageShortDesc" placeholder="Short Description:">
                 <br>
                 <input type="text" id="newPackageLongDesc" placeholder="Long Description:">
@@ -46,6 +52,12 @@
                 <input type="button" id="updateGetPackageByIdBtn" value="Get Package">
                 <br>
                 <input type="text" id="updatePackageTitle" placeholder="Title:" disabled="true">
+                <br>
+                <select id="updatePackageType" disabled="true">
+                    <option value="Overlay">Overlay</option>
+                    <option value="Sound">Sound</option>
+                    <option value="Effect">Effect</option>
+                </select>
                 <br>
                 <input type="text" id="updatePackageShortDesc" placeholder="Short Description:" disabled="true">
                 <br>

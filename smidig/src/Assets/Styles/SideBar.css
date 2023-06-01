@@ -1,0 +1,43 @@
+#sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: var(--vizrt-color-background-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#searchSidebar {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.sidebarItem {
+  width: 80%;
+  height: 50px;
+  border: none;
+  background-color: var(--vizrt-color-background-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.contentContainer {
+  width: 16px;
+  margin-right: 15px;
+}
+
+.sidebarItem:hover {
+  background-color: var(--vizrt-color-background-primary);
+}

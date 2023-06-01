@@ -5,8 +5,8 @@ import MyItems from './MyItems';
 
 const MyPackages = () => {
     return (
-        <div class="container fluid">
-            <div class="row">
+        <div className="container-fluid">
+            <div className="row">
                 <Sidebar />
                 <Container className="shop-container col">
                     <Row>
@@ -14,19 +14,16 @@ const MyPackages = () => {
                             image="Image"
                             title="Super mega Ultra nigga pack"
                             description="This pack is super mega epic"
-                            price="$42"
                         />
                         <MyItems 
                             image="Image"
                             title="Super mega Ultra nigga pack"
                             description="This pack is super mega epic"
-                            price="$42"
                         />
                         <MyItems 
                             image="Image"
                             title="Super mega Ultra nigga pack"
                             description="This pack is super mega epic"
-                            price="$42"
                         />
                     </Row>
                 </Container>

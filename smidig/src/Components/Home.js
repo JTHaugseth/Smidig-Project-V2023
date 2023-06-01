@@ -5,8 +5,8 @@ import Shopitem from './ShopItem';
 
 const Home = () => {
     return (
-        <div class="container-fluid">
-            <div class="row">
+        <div className="container-fluid">
+            <div className="row">
                 <h1>Home</h1>
             </div>
         </div>

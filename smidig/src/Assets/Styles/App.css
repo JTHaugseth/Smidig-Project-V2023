@@ -1,0 +1,20 @@
+* {
+  font-family: Arial, sans-serif;
+  color: var(--vizrt-color-text-primary);
+
+  --vizrt-color-primary: #E08256;
+  --vizrt-color-secondary: #d24129;
+  --vizrt-color-background-primary: #1e2c32;
+  --vizrt-color-background-secondary: #233540;
+  --vizrt-color-text-primary: #eeeeee;
+  --vizrt-color-text-secondary: #8AA9B7;
+}
+
+body {
+  /* background-color: #142b35 !important; */
+  background-color: var(--vizrt-color-background-primary) !important;
+}
+
+#container {
+  justify-content: space-evenly;
+}

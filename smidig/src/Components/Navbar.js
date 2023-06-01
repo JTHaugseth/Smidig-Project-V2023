@@ -76,8 +76,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link d-flex"
-                                activeClassName="active"
-                                exact
                                 to="/"
                             >
                                 <div className='icon-container'>
@@ -89,7 +87,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link d-flex"
-                                activeClassName="active"
                                 to="/my_packages"
                             >
                                 <div className='icon-container'>
@@ -101,7 +98,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link d-flex"
-                                activeClassName="active"
                                 to="/store"
                             >
                                 <div className='icon-container'>
@@ -113,7 +109,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link d-flex"
-                                activeClassName="active"
                                 to="/ai_learning"
                             >
                                 <div className='icon-container'>
@@ -125,7 +120,6 @@ const Navbar = () => {
                         <li className="nav-item">
                             <NavLink
                                 className="nav-link d-flex nav-link-inactive"
-                                activeClassName="active"
                                 to="/help"
                             > 
                                 <div className='icon-container'>

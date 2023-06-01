@@ -9,18 +9,17 @@ builder.Services.Configure<smidigDBsettings>(
 );
 builder.Services.AddSingleton<StoreService>();
 
-builder.Services.AddCors(options => {
-        options.AddPolicy("AllowAnyOrigin",
-            policies => policies
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-        );
-    }
-);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:3000")
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+    );
+});
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -40,12 +39,12 @@ if (app.Environment.IsDevelopment())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.UseHttpsRedirection();
+app.UseCors("AllowSpecificOrigin");
+
+//app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseCors("AllowAnyOrigin");
 
 app.Run();
