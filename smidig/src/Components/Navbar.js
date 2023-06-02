@@ -62,7 +62,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-custom">
+        <nav id="navbar-fixed" className="navbar navbar-expand-lg navbar-custom">
             <div className="container-fluid">
                 <button
                     className="navbar-toggler"

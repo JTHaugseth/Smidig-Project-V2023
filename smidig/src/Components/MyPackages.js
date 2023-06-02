@@ -6,7 +6,7 @@ import MyItems from './MyItems';
 const MyPackages = () => {
     return (
         <div className="container-fluid">
-            <div className="row">
+            <div className="row pt-5">
                 <Sidebar />
                 <Container className="shop-container col">
                     <Row>

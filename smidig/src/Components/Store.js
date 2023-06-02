@@ -7,6 +7,8 @@ import ShopItem from './ShopItem';
 const Store = () => {
     const [storeItems, setStoreItems] = useState([]);
     const [selectedType, setSelectedType] = useState(null);
+    const [discoverFilter, setDiscoverFilter] = useState(true);
+    const [freeFilter, setFreeFilter] = useState(false);
 
     useEffect(() => {
         axios.get(`http://localhost:5233/StoreItem`)
@@ -16,16 +18,29 @@ const Store = () => {
             .catch(err => console.error(err));
     }, []);
 
+    const filterItems = (storeItem) => {
+        if (selectedType && storeItem.type !== selectedType) {
+            return false;
+        }
+        if (discoverFilter && parseInt(storeItem.rating.split('/')[0]) <= 7) {
+            return false;
+        }
+        if (freeFilter && storeItem.price !== 0) {
+            return false;
+        }
+        return true;
+    }
+
     return (
-        <div className="container-fluid">
+        <div className="container-fluid pt-5">
             <div className="row">
-                <Sidebar setSelectedType={setSelectedType}/>
+                <Sidebar setSelectedType={setSelectedType} setDiscoverFilter={setDiscoverFilter} setFreeFilter={setFreeFilter}/>
                 <Container className="shop-container col">
                     <Row>
-                    {storeItems.filter((storeItem) => !selectedType || storeItem.type === selectedType).map((storeItem) => (
+                    {storeItems.filter(filterItems).map((storeItem) => (
                             <ShopItem
                                 key={storeItem.id}
-                                title={storeItem.title}
+                                title={storeItem.title} 
                                 type={storeItem.type}
                                 shortDesc={storeItem.shortDesc}
                                 longDesc={storeItem.longDesc}

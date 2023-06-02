@@ -13,7 +13,7 @@ const ShopItem = (props) => {
       </div>
       <Button>{props.price}</Button>
     </Col>
-  );
+  ); 
 }
 
 export default ShopItem;

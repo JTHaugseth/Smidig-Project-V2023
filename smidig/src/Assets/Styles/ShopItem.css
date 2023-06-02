@@ -1,5 +1,6 @@
 .custom-col {
-    margin: 20px;
+    margin: 2%;
+    
   }
   
   .product-image {
@@ -39,4 +40,8 @@
 
   .desccard {
     overflow: auto;
+  }
+
+  .shop-container {
+    margin-left: 200px;
   }
