@@ -1,5 +1,6 @@
 * {
   font-family: Arial, sans-serif;
+  box-sizing: border-box;
   color: var(--vizrt-color-text-primary);
 
   --vizrt-color-primary: #E08256;
@@ -8,13 +9,26 @@
   --vizrt-color-background-secondary: #233540;
   --vizrt-color-text-primary: #eeeeee;
   --vizrt-color-text-secondary: #8AA9B7;
+  --vizrt-color-passive: #eeeeeeb9;
 }
 
 body {
-  /* background-color: #142b35 !important; */
   background-color: var(--vizrt-color-background-primary) !important;
 }
 
 #container {
   justify-content: space-evenly;
+}
+
+.window-min-width {
+  min-width: 993px;
+}
+
+.navbar>.container-fluid {
+  margin: 0;
+}
+@media (max-width: 992px) {
+  .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+  }
 }

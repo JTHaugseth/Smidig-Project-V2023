@@ -32,7 +32,7 @@ const Store = () => {
     }
 
     return (
-        <div className="container-fluid pt-5">
+        <div className="container-fluid">
             <div className="row">
                 <Sidebar setSelectedType={setSelectedType} setDiscoverFilter={setDiscoverFilter} setFreeFilter={setFreeFilter}/>
                 <Container className="shop-container col">

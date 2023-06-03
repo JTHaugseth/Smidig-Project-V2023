@@ -1,17 +1,36 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import Sidebar from './Sidebar';
-import Shopitem from './ShopItem';
+import SceneNavbar from './Homepage/SceneNavbar';
+import '../Assets/Styles/Home.css';
+import PackagesWindow from './Homepage/PackagesWindow';
 
 const Home = () => {
-
-
     return (
-        <div className="container-fluid">
-            <div className="row">
-                <h1>Home</h1> 
+        <>
+            {/* Render the SceneNavbar component */}
+            <SceneNavbar />
+
+            <div className='home-container'>
+                {/* Container for the "Tools" and "Scene" sections */}
+                <div className='home-tools-container position-relative'>
+                    <p className='element-description'>Tools</p>
+
+                    {/* Container for the "Packages" section */}
+                    <div className='home-tools-packages-container position-relative'>
+                        <p className='element-description'>Packages</p>
+                        <PackagesWindow />
+                    </div>
+
+                    {/* Container for the "Layers" section */}
+                    <div className='home-tools-layers-container position-relative'>
+                        <p className='element-description'>Layers</p>
+                    </div>
+
+                </div>
+                {/* Container for the "Scene" section */}
+                <div className='home-scene-container position-relative'>
+                    <p className='element-description'>Scene</p>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
