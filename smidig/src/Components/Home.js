@@ -1,8 +1,36 @@
+import { useState } from 'react';
 import SceneNavbar from './Homepage/SceneNavbar';
-import '../Assets/Styles/Home.css';
+import '../Assets/Styles/Homepage/Home.css';
 import PackagesWindow from './Homepage/PackagesWindow';
+import SceneWindow from './Homepage/SceneWindow';
+import LayersWindow from './Homepage/LayersWindow';
 
 const Home = () => {
+    const [currentScene, setCurrentScene] = useState({
+        sceneName: 'Scene 1',
+        layers: [
+            {
+                layerName: 'Layer 1',
+                layerType: 'Image',
+                layerImage: 'https://i.imgur.com/2ZQqYkK.png',
+                layerHierarchy: 1,
+                layerPosition: {
+                    x: 0,
+                    y: 0
+                },
+                layerSize: {
+                    width: 100,
+                    height: 100
+                },
+                layerRotation: 0,
+                layerOpacity: 100,
+                layerVisibility: true
+            },
+        ]
+    });
+
+
+
     return (
         <>
             {/* Render the SceneNavbar component */}
@@ -10,25 +38,13 @@ const Home = () => {
 
             <div className='home-container'>
                 {/* Container for the "Tools" and "Scene" sections */}
-                <div className='home-tools-container position-relative'>
+                <div className='home-tools-container'>
                     <p className='element-description'>Tools</p>
-
-                    {/* Container for the "Packages" section */}
-                    <div className='home-tools-packages-container position-relative'>
-                        <p className='element-description'>Packages</p>
-                        <PackagesWindow />
-                    </div>
-
-                    {/* Container for the "Layers" section */}
-                    <div className='home-tools-layers-container position-relative'>
-                        <p className='element-description'>Layers</p>
-                    </div>
-
+                    <PackagesWindow />
+                    <LayersWindow />
                 </div>
                 {/* Container for the "Scene" section */}
-                <div className='home-scene-container position-relative'>
-                    <p className='element-description'>Scene</p>
-                </div>
+                <SceneWindow />
             </div>
         </>
     );

@@ -11,11 +11,9 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-
-
 #searchSidebar {
-  width: 110%;
-  height: 70%;
+  width: 100%;
+  height: 40%;
   background-color: var(--vizrt-color-background-secondary);
   border: 3px solid var(--vizrt-color-text-secondary);
   padding: 10px;

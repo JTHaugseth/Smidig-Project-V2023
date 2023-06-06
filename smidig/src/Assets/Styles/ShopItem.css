@@ -39,9 +39,15 @@
   }
 
   .desccard {
-    overflow: auto;
+    height: 100px;
   }
 
   .shop-container {
     margin-left: 200px;
+  }
+
+  #title {
+    color:var(--vizrt-color-primary);
+    margin-left: 2%;
+    margin-top: 1%;
   }

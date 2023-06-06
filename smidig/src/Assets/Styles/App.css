@@ -32,3 +32,21 @@ body {
       flex-direction: row;
   }
 }
+
+/* Add custom class in props where icon component is made to scale icons to preferred size
+  feel free to add aditional */
+.icon {
+  transform: scale(1);
+}
+.icon-sm {
+  transform: scale(0.8);
+}
+.icon-xs {
+  transform: scale(0.6);
+}
+.icon-lg {
+  transform: scale(1.2);
+}
+.icon-xl {
+  transform: scale(1.5);
+}

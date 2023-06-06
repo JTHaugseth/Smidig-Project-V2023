@@ -5,17 +5,20 @@ import Home from './Components/Home';
 import MyPackages from './Components/MyPackages';
 import Store from './Components/Store';
 import Help from './Components/Help';
+import StoreItemPage from './Components/StoreItemPage';
+import Ailearning from './Components/Ailearning';
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/my_packages" element={<MyPackages />} />
-        <Route path="store" element={<Store />} />
-        <Route path="ai_learning" element={<Store />} />
-        <Route path="help" element={<Help />} />
+        <Route path="/"                 element={<Home />} />
+        <Route path="/my_packages"      element={<MyPackages />} />
+        <Route path="/store"            element={<Store />} />
+        <Route path="/store/shopItems"  element={<StoreItemPage />} />
+        <Route path="/ai_learning"      element={<Ailearning />} />
+        <Route path="/help"             element={<Help />} />
       </Routes>
     </>
   );
