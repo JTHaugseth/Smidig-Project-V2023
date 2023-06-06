@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "b/CHVWXLjAYu+E+guqisBRFWJAKS+SJRnpE0PrkOEqU=",
+  "Hash": "CnsaQCUUhhSQyS0sSZEWAB2YA/1WDPpK6wI36ImUGAg=",
   "Source": "smidigAPI",
   "BasePath": "_content/smidigAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "smidigAPI\\wwwroot",
       "Source": "smidigAPI",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\BalloonsEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\BalloonsEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/BalloonsEffect.JPG",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\images\\BalloonsEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\Betapack.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\Betapack.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/Betapack.JPG",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Betapack.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\ChatBorders.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\ChatBorders.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/ChatBorders.JPG",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ChatBorders.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\ConfettiEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\ConfettiEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/ConfettiEffect.JPG",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\images\\ConfettiEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\FireEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\FireEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/FireEffect.JPG",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\images\\FireEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\FortniteSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\FortniteSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/FortniteSound.JPG",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\images\\FortniteSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\GrandTheftAutoSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\GrandTheftAutoSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/GrandTheftAutoSound.JPG",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\images\\GrandTheftAutoSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\HaloHeadshotSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\HaloHeadshotSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/HaloHeadshotSound.JPG",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\images\\HaloHeadshotSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\KeyButtons.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\KeyButtons.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/KeyButtons.JPG",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\images\\KeyButtons.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\LightningEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\LightningEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/LightningEffect.JPG",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\images\\LightningEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\LivePoll.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\LivePoll.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/LivePoll.JPG",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\images\\LivePoll.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\MoneyEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\MoneyEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/MoneyEffect.JPG",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\images\\MoneyEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\RaveEffect.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\RaveEffect.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/RaveEffect.JPG",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\images\\RaveEffect.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\RobloxSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\RobloxSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/RobloxSound.JPG",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\images\\RobloxSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\SuperMarioSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\SuperMarioSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/SuperMarioSound.JPG",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\images\\SuperMarioSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\Superpack.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\Superpack.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/Superpack.JPG",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\images\\Superpack.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\TheLegendOfZeldaSound.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\TheLegendOfZeldaSound.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/TheLegendOfZeldaSound.JPG",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\images\\TheLegendOfZeldaSound.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\images\\TierListMaker.JPG",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\images\\TierListMaker.JPG",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "images/TierListMaker.JPG",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\images\\TierListMaker.JPG"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\root.html",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\root.html",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "root.html",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\root.html"
     },
     {
-      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\root.js",
+      "Identity": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\root.js",
       "SourceId": "smidigAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\wwwroot\\",
       "BasePath": "_content/smidigAPI",
       "RelativePath": "root.js",
       "AssetKind": "All",

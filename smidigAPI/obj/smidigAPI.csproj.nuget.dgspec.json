@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\smidigAPI.csproj": {}
+    "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\smidigAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\smidigAPI.csproj": {
+    "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\smidigAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\smidigAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\smidigAPI.csproj",
         "projectName": "smidigAPI",
-        "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\smidigAPI.csproj",
+        "projectPath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\smidigAPI.csproj",
         "packagesPath": "C:\\Users\\Julian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\obj\\",
+        "outputPath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Julian\\AppData\\Roaming\\NuGet\\NuGet.Config"

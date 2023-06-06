@@ -29,6 +29,7 @@ const SceneWindow = (props) => {
         };
     }, []);
 
+
     // Handles dragging items
     const handleDrag = (e, index) => {
         const { deltaX, deltaY } = e;
