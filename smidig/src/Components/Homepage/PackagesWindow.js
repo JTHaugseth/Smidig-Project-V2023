@@ -58,7 +58,7 @@ const Packages = (props) => {
             {props.myItems
                 .filter(item => item.type === props.filter)
                 .map(item => (
-                    <div className="">
+                    <div className="packages-window-content-item">
                         <h6>{item.title}</h6>
                         <img src={`http://localhost:5233/images/${item.image}`} alt={item.title} />
                     </div>

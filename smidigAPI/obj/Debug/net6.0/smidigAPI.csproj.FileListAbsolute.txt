@@ -39,3 +39,4 @@ C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\refint\smidig
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\smidigAPI.pdb
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\smidigAPI.genruntimeconfig.cache
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\ref\smidigAPI.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
