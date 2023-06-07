@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SceneNavbar from './Homepage/SceneNavbar';
 import '../Assets/Styles/Homepage/Home.css';
 import PackagesWindow from './Homepage/PackagesWindow';
@@ -29,7 +29,27 @@ const Home = () => {
         ]
     });
 
+    const [myItems, setMyItems] = useState([]);
 
+    const fetchItemData = async (id) => {
+      const res = await fetch(`http://localhost:5233/StoreItem/${id}`);
+      const itemData = await res.json();
+      return itemData;
+    };
+  
+    useEffect(() => {
+      const ownedItems = JSON.parse(localStorage.getItem('ownedItems')) || [];
+  
+      const fetchMyItems = async () => {
+        const items = [];
+        for (let id of ownedItems) {
+          const itemData = await fetchItemData(id);
+          items.push(itemData);
+        }
+        setMyItems(items);
+      };
+      fetchMyItems();
+    }, []);
 
     return (
         <>
@@ -40,7 +60,7 @@ const Home = () => {
                 {/* Container for the "Tools" and "Scene" sections */}
                 <div className='home-tools-container'>
                     <p className='element-description'>Tools</p>
-                    <PackagesWindow />
+                    <PackagesWindow myItems={myItems}/>
                     <LayersWindow />
                 </div>
                 {/* Container for the "Scene" section */}

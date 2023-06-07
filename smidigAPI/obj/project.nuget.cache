@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DleSmpI2RAJU6xliV7nD7ehc2LpaoJ2DzITv/cdzqKaXMfZarTTnKrybWc1myP7ZR49tztSc1Y/uPihTl7MVUA==",
+  "dgSpecHash": "mQR8LEhoXML4efy57js+i2nAZs43/U8deTxwCq7f4iMJzxz7zPW7sC8EEXDs5exPO7i7bQSD5HDoSFjov+k2OQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPi\\smidigAPI.csproj",
+  "projectFilePath": "C:\\Users\\Julian\\Documents\\GitHub\\Smidig\\smidigAPI\\smidigAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Julian\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Julian\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

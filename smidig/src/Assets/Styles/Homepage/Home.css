@@ -71,13 +71,12 @@
     background-color: transparent;
 }
 
+
 .home-container {
     height: calc(100vh - 56px - 80px);
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: rgb(221, 221, 221);
-    ;
 }
 
 .home-tools-container {
@@ -141,11 +140,15 @@
     background-color: var(--vizrt-color-background-secondary);
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .packages-container {
     width: 100%;
     height: 100%;
+    padding: 8px;
+    overflow: auto;
 }
 
 .option-active {

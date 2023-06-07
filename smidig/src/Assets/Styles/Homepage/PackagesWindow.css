@@ -1,0 +1,10 @@
+.packages-window-content-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+    overflow: scoll-x;
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+}

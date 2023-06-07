@@ -25,7 +25,7 @@ const Store = () => {
         if (selectedType && storeItem.type !== selectedType) {
             return false;
         }
-        if (discoverFilter && parseInt(storeItem.rating.split('/')[0]) <= 7) {
+        if (discoverFilter && parseInt(storeItem.rating.split('/')[0]) <= 3) {
             return false;
         }
         if (freeFilter && storeItem.price !== 0) {

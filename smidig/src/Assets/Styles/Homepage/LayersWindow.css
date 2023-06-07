@@ -1,6 +1,6 @@
 .home-tools-layers-container {
     position: relative;
-    overflow: scroll;
+    overflow: auto;
     height: 50%;
     width: 100%;
     background-color: var(--vizrt-color-background-secondary);

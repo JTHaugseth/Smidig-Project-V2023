@@ -17,7 +17,6 @@
 .single-image {
     width: 90%;
     border-radius: 10px;
-
 }
 
 .single-title {
@@ -47,6 +46,18 @@
     color: var(--vizrt-color-text-primary);
 }
 
-.image-box {
-    
+#price-label {
+    color: var(--vizrt-color-primary);
+    margin: 7px;
+}
+
+#long-desc {
+    height: 60%;
+    width: 60%;
+    font-size: x-large;
+    overflow: auto;
+}
+
+#rating{
+   margin-top: 13%;
 }

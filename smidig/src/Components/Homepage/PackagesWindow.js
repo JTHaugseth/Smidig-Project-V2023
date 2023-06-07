@@ -1,5 +1,7 @@
 import { OverlayIcon, SoundIcon, EffectsIcon } from "../Icons";
 import { useState } from 'react';
+import MyItems from "../MyItems";
+import '../../Assets/Styles/Homepage/PackagesWindow.css';
 
 const ToolbarItem = (props) => {
     const handleClick = () => {
@@ -50,63 +52,59 @@ const Effects = (props) => (
     />
 );
 
-const OverlayWindow = () => {
+const Packages = (props) => {
     return (
-        <div className="packages-window">
-            Overlay
-        </div>
+        <>
+            {props.myItems
+                .filter(item => item.type === props.filter)
+                .map(item => (
+                    <div className="">
+                        <h6>{item.title}</h6>
+                        <img src={`http://localhost:5233/images/${item.image}`} alt={item.title} />
+                    </div>
+                ))}
+        </>
     );
 }
 
-const SoundWindow = () => {
-    return (
-        <div className="packages-window">
-            Sound
-        </div>
-    );
-}
-
-const EffectsWindow = () => {
-    return (
-        <div className="packages-window">
-            Effects
-        </div>
-    );
-}
-
-const PackagesWindow = () => {
+const PackagesWindow = (props) => {
     const [selected, setActive] = useState('overlay');
+    const { myItems } = props;
 
     const handleSelect = (selection) => {
         setActive(selection);
     };
 
-    let content;
+    let filter;
     let overlay = false;
     let sound = false;
     let effects = false;
     if (selected === 'overlay') {
-        content = <OverlayWindow />;
+        filter = 'Overlay'
         overlay = true;
     } else if (selected === 'sound') {
-        content = <SoundWindow />;
+        filter = 'Sound'
         sound = true;
     } else if (selected === 'effects') {
-        content = <EffectsWindow />;
+        filter = 'Effects'
         effects = true;
     }
 
     return (
         <div className='home-tools-packages-container position-relative'>
-            <p className='element-description'>Packages</p>
+            {/* <p className='element-description'>Packages</p> */}
             <div className="packages-window-container">
                 <ul className="navbar-nav packages-toolbar-container">
                     <Overlay setActive={handleSelect} isActive={overlay} />
                     <Sound setActive={handleSelect} isActive={sound} />
                     <Effects setActive={handleSelect} isActive={effects} />
                 </ul>
-                <div className="packages-container">
-                    {content}
+                <div className="packages-window-content-container">
+                    {myItems.length === 0 ? (
+                        <p>Loading...</p>
+                    ) : (
+                        <Packages myItems={myItems} filter={filter} />
+                    )}
                 </div>
             </div>
         </div>

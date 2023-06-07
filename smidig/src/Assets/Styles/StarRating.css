@@ -1,0 +1,16 @@
+.star-icon {
+    color: gray;
+  }
+  
+  .star-icon.filled {
+    color: orange;
+  }
+
+  .star-icon {
+    font-size: 40px; /* Adjust the font size as per your preference */
+  }
+  
+  .rating-label {
+    font-size: 25px; /* Adjust the font size as per your preference */
+  }
+  
