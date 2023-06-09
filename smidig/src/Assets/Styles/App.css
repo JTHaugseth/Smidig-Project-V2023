@@ -4,12 +4,27 @@
   color: var(--vizrt-color-text-primary);
 
   --vizrt-color-primary: #E08256;
+  --vizrt-color-primary-hover: #faa27a;
   --vizrt-color-secondary: #d24129;
   --vizrt-color-background-primary: #1e2c32;
   --vizrt-color-background-secondary: #233540;
   --vizrt-color-text-primary: #eeeeee;
   --vizrt-color-text-secondary: #8AA9B7;
   --vizrt-color-passive: #eeeeeeb9;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--vizrt-color-passive);
+  border-radius: 0.25rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 body {
@@ -27,9 +42,10 @@ body {
 .navbar>.container-fluid {
   margin: 0;
 }
+
 @media (max-width: 992px) {
   .navbar-expand-lg .navbar-nav {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
@@ -38,15 +54,19 @@ body {
 .icon {
   transform: scale(1);
 }
+
 .icon-sm {
   transform: scale(0.8);
 }
+
 .icon-xs {
   transform: scale(0.6);
 }
+
 .icon-lg {
   transform: scale(1.2);
 }
+
 .icon-xl {
   transform: scale(1.5);
 }

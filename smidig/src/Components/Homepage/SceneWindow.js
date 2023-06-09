@@ -3,11 +3,23 @@ import Draggable from 'react-draggable';
 import '../../Assets/Styles/Homepage/SceneWindow.css';
 
 const SceneWindow = (props) => {
-    const [zoom, setZoom] = useState(0.7);
+    const [zoom, setZoom] = useState(0.6);
     const zoomableWindowRef = useRef(null);
     const zoomableWindowContainerRef = useRef(null);
-    const draggableRef = useRef(null);
-    const [positions, setPositions] = useState([{ x: 0, y: 0 }, { x: 0, y: 0 }]);
+    const [positions, setPositions] = useState([]);
+
+    // Set the positions of the draggable elements to props.packageItems.position
+    useEffect(() => {
+        props.packageItems.forEach((item, index) => {
+            setPositions((prevPositions) => {
+                const newPositions = [...prevPositions];
+                newPositions[index] = item.position;
+                return newPositions;
+            });
+        });
+
+    }, []);
+
 
     // Zoom in and out with ctrl + scroll
     useEffect(() => {
@@ -29,42 +41,34 @@ const SceneWindow = (props) => {
         };
     }, []);
 
+    // Update the positions of the draggable elements when the zoom changes
+    const handleDrag = (index, event, ui) => {
+        const { deltaX, deltaY } = ui;
+        const scaledDeltaX = deltaX / zoom;
+        const scaledDeltaY = deltaY / zoom;
 
-    // Handles dragging items
-    const handleDrag = (e, index) => {
-        const { deltaX, deltaY } = e;
-        const zoomFactor = 1 / zoom;
-        const adjustedDeltaX = deltaX * zoomFactor;
-        const adjustedDeltaY = deltaY * zoomFactor;
+        // Update the position of the specific draggable element
+        setPositions((prevPositions) => {
+            const newPositions = [...prevPositions];
+            newPositions[index] = {
+                x: newPositions[index].x + scaledDeltaX,
+                y: newPositions[index].y + scaledDeltaY,
+            };
+            return newPositions;
+        });
+    };
 
-        const windowWidth = zoomableWindowRef.current.offsetWidth;
-        const windowHeight = zoomableWindowRef.current.offsetHeight;
-        const itemWidth = draggableRef.current.offsetWidth;
-        const itemHeight = draggableRef.current.offsetHeight;
 
-        const maxX = windowWidth - itemWidth;
-        const maxY = windowHeight - itemHeight;
-
-        let newPositionX = positions[index].x + adjustedDeltaX;
-        let newPositionY = positions[index].y + adjustedDeltaY;
-
-        if (newPositionX < 0) {
-            newPositionX = 0;
-        } else if (newPositionX > maxX) {
-            newPositionX = maxX;
-        }
-
-        if (newPositionY < 0) {
-            newPositionY = 0;
-        } else if (newPositionY > maxY) {
-            newPositionY = maxY;
-        }
-
-        // Updates the position of the item being dragged
-        const newPositions = [...positions];
-        newPositions[index] = { x: newPositionX, y: newPositionY };
-        setPositions(newPositions);
-
+    const DraggableItem = (props) => {
+        return (
+            <Draggable
+                position={props.position}
+                onDrag={(event, ui) => handleDrag(props.index, event, ui)}
+                bounds='parent'>
+                {/* <div className={props.class}>{props.text}</div> */}
+                <div className="example-item-3">Test</div>
+            </Draggable>
+        );
     };
 
     return (
@@ -73,22 +77,21 @@ const SceneWindow = (props) => {
                 <p className="element-description">Scene</p>
                 <div className="zoomable-window-container" ref={zoomableWindowContainerRef}>
                     <div className="zoomable-window" style={{ zoom }} ref={zoomableWindowRef}>
-                        <Draggable
-                            bounds="parent"
-                            position={positions[0]}
-                            onDrag={(e) => handleDrag(e, 0)}
-                            nodeRef={draggableRef}
-                        >
-                            <div className="example-item" ref={draggableRef}></div>
-                        </Draggable>
-                        <Draggable
-                            bounds="parent"
-                            position={positions[1]}
-                            onDrag={(e) => handleDrag(e, 1)}
-                            nodeRef={draggableRef}
-                        >
-                            <div className="example-item example-item-0" ref={draggableRef}></div>
-                        </Draggable>
+                        {props.packageItems.map((item, index) => (
+                            item.selected && (
+                                <Draggable
+                                    position={positions[index]}
+                                    onDrag={(event, ui) => handleDrag(index, event, ui)}
+                                    bounds='parent'
+                                    key={index}
+                                >
+                                    <div className='example-item' style={item.style}>
+                                        {item.text}
+                                    </div>
+                                </Draggable>
+                            )
+                        ))}
+
                     </div>
                 </div>
             </div>

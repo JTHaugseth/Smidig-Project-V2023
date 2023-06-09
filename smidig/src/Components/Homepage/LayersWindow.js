@@ -10,26 +10,6 @@ const LayersWindow = () => {
         console.log(isOpen);
     };
 
-    // const LayerItem = (props) => {
-    //     return (
-    //         <div class="layer-item-container">
-    //             <div class="layer-item">
-    //                 {isOpen ? (
-    //                     <button className="chevron-button" onClick={toggleOpen}>
-    //                         <ChevronRightIcon size={'sm'} />
-    //                     </button>
-    //                 ) : (
-    //                     <button className="chevron-button" onClick={toggleOpen}>
-    //                         <ChevronDownIcon size={'sm'} />
-    //                     </button>
-    //                 )}
-    //                 {props.name}
-    //             </div>
-    //         </div>
-    //     );
-    // };
-
-
     return (
         <div className='home-tools-layers-container'>
             <p className='element-description'>Layers</p>

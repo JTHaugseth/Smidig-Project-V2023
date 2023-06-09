@@ -1,4 +1,4 @@
-import { OverlayIcon, SoundIcon, EffectsIcon } from "../Icons";
+import { OverlayIcon, SoundIcon, EffectIcon } from "../Icons";
 import { useState } from 'react';
 import MyItems from "../MyItems";
 import '../../Assets/Styles/Homepage/PackagesWindow.css';
@@ -42,13 +42,13 @@ const Sound = (props) => (
     />
 );
 
-const Effects = (props) => (
+const Effect = (props) => (
     <ToolbarItem
         isActive={props.isActive}
         setActive={props.setActive}
-        item="effects"
-        icon={<EffectsIcon isActive={props.isActive} />}
-        text="Effects"
+        item="effect"
+        icon={<EffectIcon isActive={props.isActive} />}
+        text="Effect"
     />
 );
 
@@ -58,7 +58,7 @@ const Packages = (props) => {
             {props.myItems
                 .filter(item => item.type === props.filter)
                 .map(item => (
-                    <div className="packages-window-content-item">
+                    <div key={item.id} className="packages-window-content-item">
                         <h6>{item.title}</h6>
                         <img src={`http://localhost:5233/images/${item.image}`} alt={item.title} />
                     </div>
@@ -78,16 +78,16 @@ const PackagesWindow = (props) => {
     let filter;
     let overlay = false;
     let sound = false;
-    let effects = false;
+    let effect = false;
     if (selected === 'overlay') {
         filter = 'Overlay'
         overlay = true;
     } else if (selected === 'sound') {
         filter = 'Sound'
         sound = true;
-    } else if (selected === 'effects') {
-        filter = 'Effects'
-        effects = true;
+    } else if (selected === 'effect') {
+        filter = 'Effect'
+        effect = true;
     }
 
     return (
@@ -97,7 +97,7 @@ const PackagesWindow = (props) => {
                 <ul className="navbar-nav packages-toolbar-container">
                     <Overlay setActive={handleSelect} isActive={overlay} />
                     <Sound setActive={handleSelect} isActive={sound} />
-                    <Effects setActive={handleSelect} isActive={effects} />
+                    <Effect setActive={handleSelect} isActive={effect} />
                 </ul>
                 <div className="packages-window-content-container">
                     {myItems.length === 0 ? (

@@ -48,7 +48,8 @@
 
 #price-label {
     color: var(--vizrt-color-primary);
-    margin: 7px;
+    margin: 8px;
+    margin-top: 15px;
 }
 
 #long-desc {

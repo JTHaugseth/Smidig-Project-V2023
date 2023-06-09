@@ -9,20 +9,6 @@
     flex-direction: column;
 }
 
-*::-webkit-scrollbar {
-    width: 0.5rem;
-    height: 0.5rem;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: var(--vizrt-color-passive);
-    border-radius: 0.25rem;
-}
-
-*::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
 .layer-item-container {
     display: flex;
     flex-direction: column;

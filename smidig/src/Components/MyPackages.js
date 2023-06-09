@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import Sidebar from './Sidebar';
+import SidebarMyPackages from './SidebarMyPackages';
 import MyItems from './MyItems';
 
 const MyPackages = () => {
   const [myItems, setMyItems] = useState([]);
+  const [selectedType, setSelectedType] = useState(null);
 
   const fetchItemData = async (id) => {
     const res = await fetch(`http://localhost:5233/StoreItem/${id}`);
@@ -33,21 +34,29 @@ const MyPackages = () => {
     fetchMyItems();
   }, []);
 
+  const filterItems = (MyItems) => {
+    if (selectedType && MyItems.type !== selectedType) {
+      return false;
+    }
+    return true;
+  };
+
   return (
     <div className="container-fluid">
       <div className="row">
-        <Sidebar />
+        <SidebarMyPackages setSelectedType={setSelectedType} />
         <Container className="shop-container col">
           <Row>
-            {myItems.map(item => (
-              <MyItems
-                key={item.id}
-                id={item.id}
-                image={`http://localhost:5233/images/${item.image}`}
-                title={item.title}
-                description={item.shortDesc}
-                removeItem={removeItem}
-              />
+            {myItems.filter(filterItems).map(item => (
+              <Col key={item.id} md={4}>
+                <MyItems
+                  id={item.id}
+                  image={`http://localhost:5233/images/${item.image}`}
+                  title={item.title}
+                  description={item.shortDesc}
+                  removeItem={removeItem}
+                />
+              </Col>
             ))}
           </Row>
         </Container>

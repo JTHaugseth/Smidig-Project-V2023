@@ -6,14 +6,15 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: rgba(250, 235, 215, 0.295);
+    background-color: var(--vizrt-color-background-primary);
 }
 
 .zoomable-window {
     position: relative;
     width: 1920px;
     height: 1080px;
-    background-color: rgba(250, 235, 215, 0.295);
+    background-color: var(--vizrt-color-background-secondary);
+    border: 1px solid var(--vizrt-color-primary);
 }
 
 .zoomable-content {
@@ -43,12 +44,6 @@ button {
 
 .example-item {
     position: absolute;
-    width: 300px;
-    height: 100px;
-    background-color: red;
-}
-
-.example-item-0 {
-    top: 100px;
-    left: 100px;
+    font-size: 32px;
+    cursor: pointer;
 }
