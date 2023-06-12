@@ -5,6 +5,7 @@ const Ailearning = () => {
   const [value, setValue] = useState("");
   const [message, setMessage] = useState(null);
   const [previousChats, setPreviousChats] = useState([]);
+  const [isWaitingResponse, setWaitingResponse] = useState(false); // New state
   const messagesEndRef = useRef(null);
 
   const handleButtonClick = (info) => {
@@ -35,23 +36,26 @@ const Ailearning = () => {
       "- If the user asks you something that doesnt correlate to the above information your answer should be: 'I'm sorry, but I'm only able to provide information and assistance related to the streaming graphics website. Please feel free to ask me anything about the Home, My Packages, or Store pages, or click on of the premade options in the sidebar!'\n" +
       "This is the user-prompt:\n";
 
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: ruleset + message }),
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: ruleset + message }),
+      };
+  
+      setValue("");
+      setWaitingResponse(true); // Start waiting
+  
+      try {
+        const response = await fetch("http://localhost:5233/api/completions", requestOptions);
+        const data = await response.json();
+        console.log(data);
+        setMessage(data.choices[0].message);
+        setWaitingResponse(false); // Stop waiting
+      } catch (error) {
+        console.error(error);
+        setWaitingResponse(false); // Stop waiting
+      }
     };
-
-    setValue("");
-
-    try {
-      const response = await fetch("http://localhost:5233/api/completions", requestOptions);
-      const data = await response.json();
-      console.log(data);
-      setMessage(data.choices[0].message);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   const addMessageToChat = (messageContent, role) => {
     setPreviousChats((prevChats) => [
@@ -93,6 +97,7 @@ const Ailearning = () => {
               <p>{chatMessage.content}</p>
             </li>
           ))}
+          {isWaitingResponse && <TypingIndicator />}
           <div ref={messagesEndRef} />
         </ul>
         <div className="bottom-section">
@@ -110,5 +115,24 @@ const Ailearning = () => {
     </div>
   );
 };
+
+const TypingIndicator = () => {
+  const [dots, setDots] = useState('.');
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDots(dots => dots.length < 4 ? dots + '.' : '.');
+    }, 250);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <li>
+      <p className="role">AI</p>
+      <p>{dots}</p>
+    </li>
+  );
+}
 
 export default Ailearning;
