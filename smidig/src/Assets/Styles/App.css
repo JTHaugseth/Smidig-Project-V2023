@@ -8,7 +8,7 @@
   --vizrt-color-secondary: #d24129;
   --vizrt-color-background-primary: #1e2c32;
   --vizrt-color-background-secondary: #233540;
-  --vizrt-color-text-primary: #eeeeee;
+  --vizrt-color-text-primary: #dddddd;
   --vizrt-color-text-secondary: #8AA9B7;
   --vizrt-color-passive: #eeeeeeb9;
 }
@@ -29,6 +29,8 @@
 
 body {
   background-color: var(--vizrt-color-background-primary) !important;
+  margin: 0;
+  padding: 0;
 }
 
 #container {
