@@ -13,18 +13,19 @@ const ShopItem = (props) => {
   };
 
   return (
-    <Col md={3} className="custom-col">
+    <div onClick={handleClick} className="col-xl-3 col-lg-5 col-md-5 col-sm-10 custom-col">
       <div id="product-details" className='flex-grow-1'>
         <img src={props.image} alt="Product" className="product-image" />
         <h3 className='packtitle'>{props.title}</h3>
         <p className='desccard'>{props.shortDesc}</p>
       </div>
       {props.price !== '$0' ? (
-        <Button onClick={handleClick}>{props.price}</Button>
+      
+        <Button>{props.price}</Button> 
         ) : (
-          <Button onClick={handleClick}>Free</Button>
+          <Button>Free</Button>
         )}
-    </Col>
+    </div>
   ); 
 }
 

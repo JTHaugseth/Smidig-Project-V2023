@@ -60,6 +60,7 @@ const Store = () => {
             return aDistance - bDistance;
         });
     };
+    
 
     useEffect(() => {
         let newTitle = '';

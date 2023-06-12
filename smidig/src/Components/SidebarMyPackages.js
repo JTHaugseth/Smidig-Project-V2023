@@ -4,7 +4,7 @@ import { faLayerGroup, faVolumeHigh, faWandMagicSparkles } from '@fortawesome/fr
 import '../Assets/Styles/SideBar.css';
 
 const SidebarMyPackages = ({ setSelectedType }) => {
-  const [activeButton, setActiveButton] = useState('Overlays');
+  const [activeButton, setActiveButton] = useState('Overlay');
 
   const handleTypeClick = (type) => {
     setSelectedType(type);
@@ -14,7 +14,7 @@ const SidebarMyPackages = ({ setSelectedType }) => {
   return (
     <div id="sidebar">
       <button
-        className={`sidebarItem ${activeButton === 'Overlays' ? 'active' : ''}`}
+        className={`sidebarItem ${activeButton === 'Overlay' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Overlay')}>
         <div className="contentContainer">
           <FontAwesomeIcon icon={faLayerGroup} />
@@ -23,7 +23,7 @@ const SidebarMyPackages = ({ setSelectedType }) => {
       </button>
 
       <button
-        className={`sidebarItem ${activeButton === 'Sounds' ? 'active' : ''}`}
+        className={`sidebarItem ${activeButton === 'Sound' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Sound')}>
         <div className="contentContainer">
           <FontAwesomeIcon icon={faVolumeHigh} />
@@ -32,7 +32,7 @@ const SidebarMyPackages = ({ setSelectedType }) => {
       </button>
 
       <button
-        className={`sidebarItem ${activeButton === 'Effects' ? 'active' : ''}`}
+        className={`sidebarItem ${activeButton === 'Effect' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Effect')}>
         <div className="contentContainer">
           <FontAwesomeIcon icon={faWandMagicSparkles} />

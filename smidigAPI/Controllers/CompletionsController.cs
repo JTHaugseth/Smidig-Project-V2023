@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Net.Http;
 using System.Text;
@@ -11,8 +12,13 @@ namespace smidigAPI.Controllers
     [ApiController]
     public class CompletionsController : ControllerBase
     {
-        private const string API_KEY = "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";
         private static readonly HttpClient httpClient = new HttpClient();
+        private readonly IConfiguration _configuration;
+
+        public CompletionsController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ChatMessageRequest messageRequest)
@@ -26,11 +32,12 @@ namespace smidigAPI.Controllers
                     {
                         new { role = "user", content = messageRequest.Message }
                     },
-                    max_tokens = 100
+                    max_tokens = 400
                 };
                 var json = JsonConvert.SerializeObject(options);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 httpClient.DefaultRequestHeaders.Clear();
+                var API_KEY = _configuration["OpenAI:ApiKey"];
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {API_KEY}");
                 var response = await httpClient.PostAsync("https://api.openai.com/v1/chat/completions", content);
                 response.EnsureSuccessStatusCode();

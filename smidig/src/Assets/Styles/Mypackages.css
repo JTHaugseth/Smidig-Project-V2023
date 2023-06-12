@@ -1,0 +1,6 @@
+.packages-col {
+    margin: 2%;
+    padding: 1%;
+    background-color: var(--vizrt-color-background-secondary);
+    border-radius: 10px;
+}

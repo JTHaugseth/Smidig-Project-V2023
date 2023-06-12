@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SidebarMyPackages from './SidebarMyPackages';
 import MyItems from './MyItems';
+import '../Assets/Styles/Mypackages.css'
+
 
 const MyPackages = () => {
   const [myItems, setMyItems] = useState([]);
-  const [selectedType, setSelectedType] = useState(null);
+  const [selectedType, setSelectedType] = useState('Overlay');
+  const [title, setTitle] = useState('');
 
   const fetchItemData = async (id) => {
     const res = await fetch(`http://localhost:5233/StoreItem/${id}`);
@@ -41,14 +44,24 @@ const MyPackages = () => {
     return true;
   };
 
+
+  useEffect(() => {
+    let newTitle = 'Overlay';
+    if (selectedType) {
+        newTitle = selectedType;
+    }
+    setTitle(newTitle);
+  }, [selectedType]);
+
   return (
     <div className="container-fluid">
       <div className="row">
         <SidebarMyPackages setSelectedType={setSelectedType} />
-        <Container className="shop-container col">
+        <Container className="shop-container col-lg-10">
+          <h2 id="title">{title}</h2>
           <Row>
             {myItems.filter(filterItems).map(item => (
-              <Col key={item.id} md={4}>
+              <Col className="packages-col" key={item.id} xs={12} sm={6} md={4} lg={3}>
                 <MyItems
                   id={item.id}
                   image={`http://localhost:5233/images/${item.image}`}

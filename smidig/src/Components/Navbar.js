@@ -55,15 +55,7 @@ const Navbar = () => {
                                     <div className='icon-container'>
                                         <AILearningIcon urlLocation={'/ai_learning'}/>
                                     </div>
-                                    HEEELP! HELP MEE!
-                                </NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link d-flex nav-link-inactive" to="/help"                            >
-                                    <div className='icon-container'>
-                                        <HelpIcon urlLocation={'/help'}/>
-                                    </div>
-                                    Help
+                                    AI Help
                                 </NavLink>
                             </li>
                         </ul>
