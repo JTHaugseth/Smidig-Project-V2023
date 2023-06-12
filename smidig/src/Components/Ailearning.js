@@ -33,8 +33,9 @@ const Ailearning = () => {
       "In the sidebar you have the following filters: Discover (Packages with good rating), Overlays, Sounds, Effects, and items that are free.\n" +
       "You also have a search bar which you can search for packages with.\n" +
       "To see more information about a package, click on the package.\n" +
+      "- You are going to use this information to give the user the best answer you can.\n" +
       "- If the user asks you something that doesnt correlate to the above information your answer should be: 'I'm sorry, but I'm only able to provide information and assistance related to the streaming graphics website. Please feel free to ask me anything about the Home, My Packages, or Store pages, or click on of the premade options in the sidebar!'\n" +
-      "This is the user-prompt:\n";
+      "This is the user's question:\n";
 
       const requestOptions = {
         method: "POST",
