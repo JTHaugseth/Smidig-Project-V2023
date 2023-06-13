@@ -13,7 +13,7 @@ const ShopItem = (props) => {
   };
 
   return (
-    <div onClick={handleClick} className="col-xl-3 col-lg-5 col-md-5 col-sm-10 custom-col">
+    <div onClick={handleClick} className="col-xl-3 col-lg-5 col-md-5 col-sm-10 custom-col shop-item">
       <div id="product-details" className='flex-grow-1'>
         <img src={props.image} alt="Product" className="product-image" />
         <h3 className='packtitle'>{props.title}</h3>

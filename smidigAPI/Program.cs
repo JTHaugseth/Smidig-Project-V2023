@@ -12,7 +12,7 @@ builder.Services.AddSingleton<StoreService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:3000")
+        builder => builder.WithOrigins("http://localhost:3000","https://checkout.stripe.com")
                           .AllowAnyMethod()
                           .AllowAnyHeader()
     );

@@ -1,50 +1,45 @@
-.app {
+.side-bar>div:hover {
     background-color: var(--vizrt-color-background-primary);
-    display: flex;
-}
-
-.side-bar {
-    background-color: var(--vizrt-color-background-secondary);
-    height: 93vh;
-    width: 244px;
-}
-
-.side-bar>h1 {
-    font-size: 30px;
-    padding: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.side-bar>p {
-    font-size: 15px;
-    padding: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.side-bar>button {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    margin-top: 10px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.side-bar>button:hover {
-    background-color: var(--vizrt-color-background-primary)
+    color: var(--vizrt-color-primary-hover);
+    cursor: pointer;
 }
 
 .main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* fills the viewheight - the navbar height */
+    height: calc(100vh - 56px);
+    padding: 0 16px;
+}
+
+.feed {
+    /* background-color: rgba(127, 255, 212, 0.13); */
+    overflow: auto;
+    width: 100%;
+    padding: 16px 0 32px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-section {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    padding-top: 10px;
+}
+.bottom-section::after {
+    content: "";
+    width: 98%;
+    height: 40px;
+    background: linear-gradient(180deg, transparent 0%, var(--vizrt-color-background-primary) 100%);
+    position: absolute;
+    top: -40px;
+    left: 0;
 }
 
 .info {
@@ -53,18 +48,10 @@
     padding: 10px;
 }
 
-.bottom-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .input-container {
     position: relative;
     width: 100%;
-    max-width: 650px;
+    max-width: 800px;
 }
 
 input {
@@ -92,31 +79,43 @@ input:focus {
     cursor: pointer;
 }
 
-.feed {
-    overflow: auto;
-    height: calc(86vh - 120px);  /* Adjust the '120px' according to your requirement */
-    width: 100%;
-    padding: 15px;
-}
-
-.feed li {
+.chat-box {
     display: flex;
-    background-color: #333d44;
+    background-color: var(--vizrt-color-background-secondary);
     width: 100%;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 15px;
+    max-width: 800px;
+    padding: 16px;
+    margin: 0 0 16px;
+    border-radius: 8px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.feed p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 14px;
-    text-align: left;
-    align-self: center;
-}
-
-.feed p.role {
-    min-width: 100px;
+.role {
+    min-width: 60px;
 }
 
 
+@media only screen and (max-width: 850px) {
+    .input-container {
+        max-width: 500px;
+    }
+}
+
+.ai-assistant-hints-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.ai-assistant-hints {
+    max-width: 800px;
+    background-color: var(--vizrt-color-background-secondary);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.margin-bottom {
+    margin-bottom: 16px;
+}

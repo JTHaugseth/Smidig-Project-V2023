@@ -1,26 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../Assets/Styles/StoreItemPage.css';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import StarRating from './StarRating';
-
+import PaymentForm from './PaymentForm';
 
 const StoreItemPage = () => {
   const [storeItem, setStoreItem] = useState(null);
   const [isOwned, setIsOwned] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleClick = () => {
-    const currentItemId = localStorage.getItem('currentItemId');
-    const ownedItems = JSON.parse(localStorage.getItem('ownedItems')) || [];
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const sessionID = searchParams.get('session_id');
 
-    if (!ownedItems.includes(currentItemId)) {
-      ownedItems.push(currentItemId);
-      localStorage.setItem('ownedItems', JSON.stringify(ownedItems));
-      setIsOwned(true);
+    if (sessionID) {
+      const currentItemId = localStorage.getItem('currentItemId');
+      const ownedItems = JSON.parse(localStorage.getItem('ownedItems')) || [];
+
+      if (!ownedItems.includes(currentItemId)) {
+        ownedItems.push(currentItemId);
+        localStorage.setItem('ownedItems', JSON.stringify(ownedItems));
+        setIsOwned(true);
+      }
     }
-  }
+  }, [location.search]);
 
   useEffect(() => {
     const currentItemId = localStorage.getItem('currentItemId');
@@ -36,7 +41,7 @@ const StoreItemPage = () => {
   }, []);
 
   const backButton = () => {
-    navigate('/store/'); 
+    navigate('/store/');
   };
 
   return (
@@ -52,11 +57,20 @@ const StoreItemPage = () => {
           {storeItem && <img src={`http://localhost:5233/images/${storeItem.image}`} alt="Product" className="single-image" />}
           <p></p>
           <div className='background-buy'>
-            {!isOwned && storeItem && <p id="price-label">{storeItem.price}</p>}
-            <button className='btn btn-success' id="buy-button" onClick={handleClick}>
-              {isOwned ? 'Owned' : 'Buy'}
-            </button>
-            
+            {!isOwned && storeItem && (
+              <>
+                {storeItem.price === 0 ? (
+                  <p id="price-label">Free</p>
+                ) : (
+                  <p id="price-label">{storeItem.price}</p>
+                )}
+              </>
+            )}
+            {!isOwned ? (
+              <PaymentForm />
+            ) : (
+              <div className='owned'>Owned</div>
+            )}
           </div>
         </div>
       </div>

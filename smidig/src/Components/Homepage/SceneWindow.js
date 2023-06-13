@@ -6,20 +6,16 @@ const SceneWindow = (props) => {
     const [zoom, setZoom] = useState(0.6);
     const zoomableWindowRef = useRef(null);
     const zoomableWindowContainerRef = useRef(null);
-    const [positions, setPositions] = useState([]);
+    const [isClickValid, setIsClickValid] = useState(false);
 
-    // Set the positions of the draggable elements to props.packageItems.position
-    useEffect(() => {
-        props.packageItems.forEach((item, index) => {
-            setPositions((prevPositions) => {
-                const newPositions = [...prevPositions];
-                newPositions[index] = item.position;
-                return newPositions;
-            });
-        });
+    // Stops the click event from triggering when dragging
+    const handleMouseDown = () => {
+        setIsClickValid(true);
 
-    }, []);
-
+        setTimeout(() => {
+            setIsClickValid(false);
+        }, 200);
+    };
 
     // Zoom in and out with ctrl + scroll
     useEffect(() => {
@@ -41,52 +37,111 @@ const SceneWindow = (props) => {
         };
     }, []);
 
-    // Update the positions of the draggable elements when the zoom changes
+    // Might need to revert this back to the old code ( 01 ) if it renders useless
+    // Updates the handleDrag function so the positions of the draggable elements adjusts accordingly when the zoom changes
     const handleDrag = (index, event, ui) => {
         const { deltaX, deltaY } = ui;
-        const scaledDeltaX = deltaX / zoom;
-        const scaledDeltaY = deltaY / zoom;
+        const zoomFactor = 1 / zoom;
+        const scaledDeltaX = deltaX * zoomFactor;
+        const scaledDeltaY = deltaY * zoomFactor;
 
-        // Update the position of the specific draggable element
-        setPositions((prevPositions) => {
-            const newPositions = [...prevPositions];
-            newPositions[index] = {
-                x: newPositions[index].x + scaledDeltaX,
-                y: newPositions[index].y + scaledDeltaY,
-            };
-            return newPositions;
+        // 01 - Old code that only moved the clicked element
+        // props.setPackageItems((prevPackageItems) => {
+        //     const newPackageItems = [...prevPackageItems];
+        //     newPackageItems[index].position = {
+        //         x: newPackageItems[index].position.x + scaledDeltaX,
+        //         y: newPackageItems[index].position.y + scaledDeltaY,
+        //     };
+        //     return newPackageItems;
+        // });
+
+        // 02 - New code that moves all selected elements
+        props.setPackageItems((prevPackageItems) => {
+            return prevPackageItems.map((item, i) => {
+                if (i === index || item.selected) {
+                    return {
+                        ...item,
+                        position: {
+                            x: item.position.x + scaledDeltaX,
+                            y: item.position.y + scaledDeltaY,
+                        },
+                    };
+                }
+                return item;
+            });
         });
+
     };
 
-
-    const DraggableItem = (props) => {
-        return (
-            <Draggable
-                position={props.position}
-                onDrag={(event, ui) => handleDrag(props.index, event, ui)}
-                bounds='parent'>
-                {/* <div className={props.class}>{props.text}</div> */}
-                <div className="example-item-3">Test</div>
-            </Draggable>
-        );
+    // Toggles the selected state of the clicked element when clicking on it
+    const handleClick = (index, event) => {
+        if (!isClickValid) {
+            return;
+        }
+        if (!event.shiftKey) {
+            props.setPackageItems((prevPackageItems) => {
+                const newPackageItems = prevPackageItems.map((item, i) => ({
+                    ...item,
+                    selected: i === index ? !item.selected : false,
+                }));
+                return newPackageItems;
+            });
+        } else {
+            props.setPackageItems((prevPackageItems) => {
+                const newPackageItems = [...prevPackageItems];
+                newPackageItems[index].selected = !newPackageItems[index].selected;
+                return newPackageItems;
+            });
+        }
     };
+
+    // Deselect all elements when clicking outside of the zoomable window
+    useEffect(() => {
+        const zoomableWindowContainer = zoomableWindowContainerRef.current;
+
+        const handleContainerClick = (event) => {
+            // Check if the click occurred on a draggable element
+            const isDraggableElement = event.target.classList.contains('example-item');
+
+            if (!isDraggableElement) {
+                // Deselect all elements
+                props.setPackageItems((prevPackageItems) =>
+                    prevPackageItems.map((item) => ({
+                        ...item,
+                        selected: false,
+                    }))
+                );
+            }
+        };
+
+        zoomableWindowContainer.addEventListener('click', handleContainerClick);
+
+        return () => {
+            zoomableWindowContainer.removeEventListener('click', handleContainerClick);
+        };
+    }, []);
 
     return (
         <>
             <div className="home-scene-container position-relative">
-                <p className="element-description">Scene</p>
                 <div className="zoomable-window-container" ref={zoomableWindowContainerRef}>
-                    <div className="zoomable-window" style={{ zoom }} ref={zoomableWindowRef}>
+                    <div className="zoomable-window" style={{ zoom }} ref={zoomableWindowRef} >
                         {props.packageItems.map((item, index) => (
-                            item.selected && (
+                            item.active && (
                                 <Draggable
-                                    position={positions[index]}
+                                    position={item.position}
                                     onDrag={(event, ui) => handleDrag(index, event, ui)}
                                     bounds='parent'
                                     key={index}
+                                    onMouseDown={handleMouseDown}
                                 >
-                                    <div className='example-item' style={item.style}>
-                                        {item.text}
+                                    <div
+                                        className={`example-item ${item.selected ? 'selected' : ''}`}
+                                        style={item.style}
+                                        onClick={(event) => handleClick(index, event)}>
+                                        {item.type === 'html' ? item.text : <div dangerouslySetInnerHTML={{ __html: item.text }}></div>}
+                                        {item.type === 'svg' ? <div className='non-clickable' dangerouslySetInnerHTML={{ __html: item.svg }}></div> : ''}
+                                        {item.type === 'image' ? <img style={item.imgStyle} className='non-clickable' src={item.src} alt={item.text} /> : ''}
                                     </div>
                                 </Draggable>
                             )

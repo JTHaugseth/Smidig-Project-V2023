@@ -40,3 +40,17 @@ C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\smidigAPI.pdb
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\smidigAPI.genruntimeconfig.cache
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\obj\Debug\net6.0\ref\smidigAPI.dll
 C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\Stripe.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\Stripe.net.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Julian\Documents\GitHub\Smidig\smidigAPI\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll

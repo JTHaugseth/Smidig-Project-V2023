@@ -38,29 +38,28 @@ const Store = () => {
         return items.sort((a, b) => {
             const aStartsWithInput = a.title.toLowerCase().startsWith(searchInput.toLowerCase()) ? 0 : 1;
             const bStartsWithInput = b.title.toLowerCase().startsWith(searchInput.toLowerCase()) ? 0 : 1;
-        
+
             if (aStartsWithInput !== bStartsWithInput) {
                 return aStartsWithInput - bStartsWithInput;
             }
-        
+
             const searchWords = searchInput.toLowerCase().split(' ');
             const aTitleWords = new Set(a.title.toLowerCase().split(' '));
             const bTitleWords = new Set(b.title.toLowerCase().split(' '));
-        
+
             const aMatches = searchWords.filter(word => aTitleWords.has(word)).length;
             const bMatches = searchWords.filter(word => bTitleWords.has(word)).length;
-    
+
             if (aMatches !== bMatches) {
                 return bMatches - aMatches;
             }
-        
+
             const aDistance = levenshtein.get(a.title.toLowerCase(), searchInput.toLowerCase());
             const bDistance = levenshtein.get(b.title.toLowerCase(), searchInput.toLowerCase());
-        
+
             return aDistance - bDistance;
         });
     };
-    
 
     useEffect(() => {
         let newTitle = '';
@@ -77,28 +76,27 @@ const Store = () => {
     }, [selectedType, discoverFilter, freeFilter]);
 
     return (
-        <div className="container-fluid">
-            <div className="row">
-                <Sidebar setSelectedType={setSelectedType} setDiscoverFilter={setDiscoverFilter} setFreeFilter={setFreeFilter} setSearchInput={setSearchInput}/>
-                <Container className="shop-container col">
-                    <h2 id="title">{title}</h2>
-                    <Row>
+        <div className='sidebar-fix'>
+            <Sidebar setSelectedType={setSelectedType} setDiscoverFilter={setDiscoverFilter} setFreeFilter={setFreeFilter} setSearchInput={setSearchInput} />
+            <div className="sidebar-filler"></div>
+            <Container >
+                <div className="title">{title}</div>
+                <Row>
                     {sortItems(storeItems.filter(filterItems)).map((storeItem) => (
-                            <ShopItem
-                                key={storeItem.id}
-                                id={storeItem.id}
-                                title={storeItem.title} 
-                                type={storeItem.type}
-                                shortDesc={storeItem.shortDesc}
-                                longDesc={storeItem.longDesc}
-                                price={`$${storeItem.price}`}
-                                rating={storeItem.rating}
-                                image={`http://localhost:5233/images/${storeItem.image}`}
-                            />
-                        ))}  
-                    </Row>
-                </Container>
-            </div>
+                        <ShopItem
+                            key={storeItem.id}
+                            id={storeItem.id}
+                            title={storeItem.title}
+                            type={storeItem.type}
+                            shortDesc={storeItem.shortDesc}
+                            longDesc={storeItem.longDesc}
+                            price={`$${storeItem.price}`}
+                            rating={storeItem.rating}
+                            image={`http://localhost:5233/images/${storeItem.image}`}
+                        />
+                    ))}
+                </Row>
+            </Container>
         </div>
     );
 }

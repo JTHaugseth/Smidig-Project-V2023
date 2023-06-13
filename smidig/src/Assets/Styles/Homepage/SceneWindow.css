@@ -2,11 +2,19 @@
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    display: grid;
+    place-items: center;
+    overflow: auto;
     background-color: var(--vizrt-color-background-primary);
+    padding: 10px;
+}
+.zoomable-window-container::after {
+    content: 'Ctrl + Mousewheel to zoom - Click items to select or drag around';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: var(--vizrt-color-passive);
 }
 
 .zoomable-window {
@@ -14,19 +22,25 @@
     width: 1920px;
     height: 1080px;
     background-color: var(--vizrt-color-background-secondary);
-    border: 1px solid var(--vizrt-color-primary);
 }
 
-.zoomable-content {
+.zoomable-window::after {
+    border: 1px solid var(--vizrt-color-primary);
+    content: '';
+    position: absolute;
     width: 1920px;
     height: 1080px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(var(--zoom));
-    transform-origin: center;
 }
 
+.zoomable-window::before {
+    font-size: 18px;
+    content: "1920x1080";
+    text-align: center;
+    color: var(--vizrt-color-primary);
+    position: absolute;
+    top: -30px;
+    width: 1920px;
+}
 
 .zoom-controls {
     position: absolute;
@@ -46,4 +60,20 @@ button {
     position: absolute;
     font-size: 32px;
     cursor: pointer;
+}
+
+.selected::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: var(--border-selected-thick);
+    border-radius: 4px;
+}
+
+.non-clickable{
+    pointer-events: none;
 }

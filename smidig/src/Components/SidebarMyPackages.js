@@ -12,33 +12,33 @@ const SidebarMyPackages = ({ setSelectedType }) => {
   };
 
   return (
-    <div id="sidebar">
-      <button
-        className={`sidebarItem ${activeButton === 'Overlay' ? 'active' : ''}`}
+    <div className='sidebar'>
+      <div
+        className={`sidebar-item ${activeButton === 'Overlay' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Overlay')}>
-        <div className="contentContainer">
+        <div  className="icon-container">
           <FontAwesomeIcon icon={faLayerGroup} />
         </div>
         Overlays
-      </button>
+      </div>
 
-      <button
-        className={`sidebarItem ${activeButton === 'Sound' ? 'active' : ''}`}
+      <div
+        className={`sidebar-item ${activeButton === 'Sound' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Sound')}>
-        <div className="contentContainer">
+        <div  className="icon-container">
           <FontAwesomeIcon icon={faVolumeHigh} />
         </div>
         Sounds
-      </button>
+      </div>
 
-      <button
-        className={`sidebarItem ${activeButton === 'Effect' ? 'active' : ''}`}
+      <div
+        className={`sidebar-item ${activeButton === 'Effect' ? 'active' : ''}`}
         onClick={() => handleTypeClick('Effect')}>
-        <div className="contentContainer">
+        <div  className="icon-container">
           <FontAwesomeIcon icon={faWandMagicSparkles} />
         </div>
         Effects
-      </button>
+      </div>
     </div>
   );
 };

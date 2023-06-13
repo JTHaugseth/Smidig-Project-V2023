@@ -48,32 +48,31 @@ const MyPackages = () => {
   useEffect(() => {
     let newTitle = 'Overlay';
     if (selectedType) {
-        newTitle = selectedType;
+      newTitle = selectedType;
     }
     setTitle(newTitle);
   }, [selectedType]);
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <SidebarMyPackages setSelectedType={setSelectedType} />
-        <Container className="shop-container col-lg-10">
-          <h2 id="title">{title}</h2>
-          <Row>
-            {myItems.filter(filterItems).map(item => (
-              <Col className="packages-col" key={item.id} xs={12} sm={6} md={4} lg={3}>
-                <MyItems
-                  id={item.id}
-                  image={`http://localhost:5233/images/${item.image}`}
-                  title={item.title}
-                  description={item.shortDesc}
-                  removeItem={removeItem}
-                />
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div>
+    <div className='sidebar-fix'>
+      <SidebarMyPackages setSelectedType={setSelectedType} />
+      <div className="sidebar-filler"></div>
+      <Container>
+        <div className="title">{title}</div>
+        <Row>
+          {myItems.filter(filterItems).map(item => (
+            <Col className="packages-col" key={item.id} xs={12} sm={6} md={4} lg={3}>
+              <MyItems
+                id={item.id}
+                image={`http://localhost:5233/images/${item.image}`}
+                title={item.title}
+                description={item.shortDesc}
+                removeItem={removeItem}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

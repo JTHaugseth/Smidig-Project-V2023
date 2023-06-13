@@ -20,6 +20,9 @@
 
 .icon-container {
   width: 30px;
+  margin-right: 6px;
+  display: grid;
+  place-items: center;
 }
 
 .nav-item {
