@@ -60,8 +60,6 @@ body {
   }
 }
 
-/* Add custom class in props where icon component is made to scale icons to preferred size
-  feel free to add aditional */
 .icon {
   transform: scale(1);
 }

@@ -1,21 +1,24 @@
 import React, { useState, useRef } from 'react';
 import { LayeredRectangleIcon, RectangleIcon, AddRectangleIcon } from '../Icons';
 
+// Component for individual scene item
 const SceneItem = (props) => {
-    const [isEditing, setIsEditing] = useState(false);
-    const [editableText, setEditableText] = useState(props.text);
-    const clickCountRef = useRef(0);
+    const [isEditing, setIsEditing] = useState(false); // State to track editing mode
+    const [editableText, setEditableText] = useState(props.text); // State for editable text
+    const clickCountRef = useRef(0); // Ref to track click count
 
+    // Handle deletion of a scene item
     const handleDelete = (id) => {
         props.deleteScene(id);
     };
 
+    // Handle click on a scene item
     const handleClick = () => {
         clickCountRef.current++;
         if (clickCountRef.current === 1) {
             setTimeout(() => {
                 if (clickCountRef.current === 2) {
-                    setIsEditing(true);
+                    setIsEditing(true); // Enable editing mode on double click
                 }
                 clickCountRef.current = 0;
             }, 300);
@@ -23,10 +26,12 @@ const SceneItem = (props) => {
         props.setActive(editableText);
     };
 
+    // Handle input change in the editable text field
     const handleInputChange = (e) => {
         setEditableText(e.target.value);
     };
 
+    // Handle key down event in the editable text field
     const handleInputKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent form submission (if wrapped in a form element)
@@ -34,6 +39,7 @@ const SceneItem = (props) => {
         }
     };
 
+    // Handle blur event in the editable text field
     const handleInputBlur = () => {
         setIsEditing(false);
         const updatedScenes = props.scenes.map((scene) => {
@@ -50,6 +56,7 @@ const SceneItem = (props) => {
         props.setActive(editableText);
     };
 
+    // Handle click event in the editable text field
     const handleInputClick = (e) => {
         e.preventDefault(); // Prevent input from being deselected when clicked
         e.stopPropagation(); // Prevent the click event from propagating to the parent div
@@ -79,6 +86,7 @@ const SceneItem = (props) => {
     );
 }
 
+// Component for the "New Scene" item
 const NewSceneItem = (props) => {
     const handleClick = () => {
         // checks if New Scene already exists in the scenes array if it does add 1 to the end of the name. If there is New Scene 1 then add 2 to the end of the name and so on.
@@ -100,6 +108,7 @@ const NewSceneItem = (props) => {
     );
 }
 
+// Component for the "All Scenes" item
 const AllScenesItem = (props) => {
     return (
         <div className='overlay-item overlay-item-all position-relative'>
@@ -119,7 +128,7 @@ const SceneRenderer = (props) => {
                     return (
                         <SceneItem
                             key={index}
-                            id={scene.id} 
+                            id={scene.id}
                             scenes={props.scenes}
                             deleteScene={props.deleteScene}
                             setScenes={props.setScenes}
@@ -136,6 +145,7 @@ const SceneRenderer = (props) => {
     );
 }
 
+// Component for the scene navbar
 const SceneNavbar = () => {
     const [scenes, setScenes] = useState([
         {

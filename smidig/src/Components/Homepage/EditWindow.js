@@ -30,6 +30,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         };
     }, []);
 
+    // Remove button component
     const RemoveButton = ({ index }) => {
         const handleRemove = () => {
             let newPackageItems = [...packageItems];
@@ -44,6 +45,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         )
     }
 
+    // Add button component
     const AddButton = ({ index }) => {
         const handleAdd = () => {
             let newPackageItems = [...packageItems];
@@ -58,6 +60,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         );
     };
 
+    // Add all button component
     const AddAllButton = () => {
         const handleAddAll = () => {
             let newPackageItems = [...packageItems];
@@ -72,6 +75,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         );
     };
 
+    // Remove all button component
     const RemoveAllButton = () => {
         const handleRemoveAll = () => {
             let newPackageItems = [...packageItems];
@@ -86,6 +90,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         );
     };
 
+    // Update the html element's background color when the color picker changes
     useEffect(() => {
         const newPackageItems = [...packageItems];
         newPackageItems.forEach(item => {
@@ -96,6 +101,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         setPackageItems(newPackageItems);
     }, [backgroundColor]);
 
+    // Update the html element's text color when the color picker changes
     useEffect(() => {
         const newPackageItems = [...packageItems];
         newPackageItems.forEach(item => {
@@ -106,6 +112,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         setPackageItems(newPackageItems);
     }, [textColor]);
 
+    // Update the color picker when the selected element changes
     useEffect(() => {
         const newPackageItems = [...packageItems];
         newPackageItems.forEach(item => {
@@ -139,7 +146,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
             });
         }
 
-        else if (!event.shiftKey) {
+        else if (!event.ctrlKey) {
             setPackageItems((prevPackageItems) => {
                 const newPackageItems = prevPackageItems.map((item, i) => ({
                     ...item,
@@ -156,6 +163,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         }
     };
 
+    // Makes sure the inputed value is a valid hex color before setting the state
     const handleTextColor = (e) => {
         // Check if value is a valid hex color
         setInputTextColor(e.target.value);
@@ -163,6 +171,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
         setTextColor(e.target.value);
     };
 
+    // Makes sure the inputed value is a valid hex color before setting the state
     const handleBackgroundColor = (e) => {
         // Check if value is a valid hex color
         setInputBackgroundColor(e.target.value);

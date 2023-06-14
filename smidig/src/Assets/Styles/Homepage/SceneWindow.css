@@ -9,7 +9,7 @@
     padding: 10px;
 }
 .zoomable-window-container::after {
-    content: 'Ctrl + Mousewheel to zoom - Click items to select or drag around';
+    content: 'Ctrl + Mousewheel to zoom - Click items to select or drag around (Ctrl + Click to select multiple)';
     position: absolute;
     bottom: 10px;
     left: 10px;
@@ -30,6 +30,7 @@
     position: absolute;
     width: 1920px;
     height: 1080px;
+    pointer-events: none;
 }
 
 .zoomable-window::before {

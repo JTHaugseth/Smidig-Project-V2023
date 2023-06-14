@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/Styles/Navbar.css';
 import { HomeIcon, MyPackagesIcon, StoreIcon, AILearningIcon } from './Icons';
 
+// Navbar component
 const Navbar = () => {
     return (
         <div>

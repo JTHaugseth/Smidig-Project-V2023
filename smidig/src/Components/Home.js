@@ -3,7 +3,6 @@ import SceneNavbar from './Homepage/SceneNavbar';
 import '../Assets/Styles/Homepage/Home.css';
 import PackagesWindow from './Homepage/PackagesWindow';
 import SceneWindow from './Homepage/SceneWindow';
-// import LayersWindow from './Homepage/LayersWindow';
 import EditWindow from './Homepage/EditWindow';
 
 const Home = () => {

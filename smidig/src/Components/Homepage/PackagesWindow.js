@@ -2,6 +2,7 @@ import { OverlayIcon, SoundIcon, EffectIcon } from "../Icons";
 import { useState } from 'react';
 import '../../Assets/Styles/Homepage/PackagesWindow.css';
 
+// Component for each item in the toolbar
 const ToolbarItem = (props) => {
     const handleClick = () => {
         props.setActive(props.item);
@@ -21,6 +22,7 @@ const ToolbarItem = (props) => {
     );
 };
 
+// Toolbar items
 const Overlay = (props) => (
     <ToolbarItem
         isActive={props.isActive}
@@ -51,6 +53,7 @@ const Effect = (props) => (
     />
 );
 
+// Component for each item in the packages window
 const Packages = (props) => {
     return (
         <>
@@ -66,6 +69,7 @@ const Packages = (props) => {
     );
 }
 
+// Packages window
 const PackagesWindow = (props) => {
     const [selected, setActive] = useState('overlay');
     const { myItems } = props;

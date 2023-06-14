@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import levenshtein from 'fast-levenshtein';
 import Sidebar from './Sidebar';
 import ShopItem from './ShopItem';
@@ -13,6 +13,7 @@ const Store = () => {
     const [title, setTitle] = useState('');
     const [searchInput, setSearchInput] = useState('');
 
+    // Fetches all store items from the database
     useEffect(() => {
         axios.get(`http://localhost:5233/StoreItem`)
             .then(res => {
@@ -21,6 +22,7 @@ const Store = () => {
             .catch(err => console.error(err));
     }, []);
 
+    // Filters the store items based on the selected filters
     const filterItems = (storeItem) => {
         if (selectedType && storeItem.type !== selectedType) {
             return false;
@@ -34,6 +36,7 @@ const Store = () => {
         return true;
     }
 
+    // Sorts the store items based on the search input. Uses the Levensthein sorting algorithm.
     const sortItems = (items) => {
         return items.sort((a, b) => {
             const aStartsWithInput = a.title.toLowerCase().startsWith(searchInput.toLowerCase()) ? 0 : 1;
@@ -61,6 +64,7 @@ const Store = () => {
         });
     };
 
+    // Updates the title based on the selected filters
     useEffect(() => {
         let newTitle = '';
         if (selectedType) {

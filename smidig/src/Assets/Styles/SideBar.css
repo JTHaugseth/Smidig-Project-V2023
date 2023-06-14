@@ -27,7 +27,7 @@
 }
 .sidebar-fix {
   display: grid;
-  grid-template-columns: auto 1fr; /* First column auto-sized, second column takes remaining space */
+  grid-template-columns: auto 1fr;
 }
 .sidebar-filler {
   background-color: transparent;
@@ -54,7 +54,6 @@
   background-color: var(--vizrt-color-background-primary);
 }
 .sidebar-item-search-input {
-  /* remove all bootstrap styles */
   border: 2px solid transparent;
   outline: none;
   box-shadow: none;

@@ -16,17 +16,17 @@ namespace YourNamespace.Controllers
     [Route("api/payment")]
     public class PaymentController : ControllerBase
     {
-        private readonly StoreService _storeService; // Declare StoreService
+        private readonly StoreService _storeService; 
         private const string StripeSecretKey = "sk_test_51NGdW9I01YhOsco0IyklFoDDEMMapDdl7rI3k3LasXLVjOQPD3vlFVoRoT9V4J4XEjGpgLyNrpO9iCUI48V2Khsk00EitnTw8K";
 
-        public PaymentController(StoreService storeService) // Inject StoreService into your constructor
+        public PaymentController(StoreService storeService) 
         {
-            _storeService = storeService; // Assign to field
+            _storeService = storeService; 
         }
 
         [HttpPost]
         [Route("create-checkout-session")]
-        public ActionResult CreateTest([FromBody] CreateTestRequest request) // Receive the itemId from the request
+        public ActionResult CreateTest([FromBody] CreateTestRequest request) 
         {
             StripeConfiguration.ApiKey = StripeSecretKey;
 
@@ -35,7 +35,6 @@ namespace YourNamespace.Controllers
             return BadRequest("ItemId is required.");
             }
   
-            // Use the StoreService to get the item based on the itemId
             StoreItem? item = _storeService.GetById(request.ItemId);
 
             if(item == null) {
@@ -55,16 +54,16 @@ namespace YourNamespace.Controllers
                     {
                         PriceData = new SessionLineItemPriceDataOptions
                         {
-                            UnitAmount = (long?)(item.price * 100), //fetch price from the database based on the name
+                            UnitAmount = (long?)(item.price * 100), 
                             Currency = "usd",
                             ProductData = new SessionLineItemPriceDataProductDataOptions
                             {
-                                Name = item.title, //fetch the name from database based on the name of the item they are buying
+                                Name = item.title, 
                             },
                         },
                         Quantity = 1,
                     },
-                }, //?session_id={CHECKOUT_SESSION_ID}
+                },
                 Mode = "payment",
                 SuccessUrl = domain + "/store/shopItems?session_id={CHECKOUT_SESSION_ID}", 
                 CancelUrl = domain + "/store/shopItems",

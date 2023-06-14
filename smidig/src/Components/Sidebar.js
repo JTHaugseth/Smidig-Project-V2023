@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faLayerGroup, faVolumeHigh, faWandMagicSparkles, faTag, faSearch, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faLayerGroup, faVolumeHigh, faWandMagicSparkles, faTag } from '@fortawesome/free-solid-svg-icons';
 import '../Assets/Styles/SideBar.css';
 
 const Sidebar = ({ setSelectedType, setDiscoverFilter, setFreeFilter, setSearchInput }) => {
     const [activeButton, setActiveButton] = useState('Discover');
-    // const [showSearch, setShowSearch] = useState(false);
     const [searchActive, setSearchActive] = useState(false);
 
+    // Handles the click of the type-select buttons
     const handleTypeClick = (type) => {
         setSelectedType(type);
         setDiscoverFilter(false);
@@ -15,8 +15,8 @@ const Sidebar = ({ setSelectedType, setDiscoverFilter, setFreeFilter, setSearchI
         setActiveButton(type);
     };
 
+    // Handles the click of the Search button
     const handleSearchClick = () => {
-        // setShowSearch(true);
         setSearchActive(true);
         setDiscoverFilter(false);
         setFreeFilter(false);
@@ -34,7 +34,6 @@ const Sidebar = ({ setSelectedType, setDiscoverFilter, setFreeFilter, setSearchI
                     onChange={e => setSearchInput(e.target.value)}
                 />
             </div>
-            {/* } */}
             <div className={`sidebar-item ${activeButton === 'Discover' ? 'active' : ''}`} onClick={() => { setDiscoverFilter(true); setSelectedType(null); setFreeFilter(false); setActiveButton('Discover'); setSearchActive(false); }} >
                 <div className="icon-container">
                     <FontAwesomeIcon icon={faStar} />

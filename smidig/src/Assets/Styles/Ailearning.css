@@ -7,13 +7,11 @@
 .main {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    /* fills the viewheight - the navbar height */
     height: calc(100vh - 56px);
     padding: 0 16px;
 }
 
 .feed {
-    /* background-color: rgba(127, 255, 212, 0.13); */
     overflow: auto;
     width: 100%;
     padding: 16px 0 32px;

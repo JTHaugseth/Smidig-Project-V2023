@@ -7,6 +7,8 @@ const SceneWindow = (props) => {
     const zoomableWindowRef = useRef(null);
     const zoomableWindowContainerRef = useRef(null);
     const [isClickValid, setIsClickValid] = useState(false);
+    const { setPackageItems } = props;
+    
 
     // Stops the click event from triggering when dragging
     const handleMouseDown = () => {
@@ -37,7 +39,6 @@ const SceneWindow = (props) => {
         };
     }, []);
 
-    // Might need to revert this back to the old code ( 01 ) if it renders useless
     // Updates the handleDrag function so the positions of the draggable elements adjusts accordingly when the zoom changes
     const handleDrag = (index, event, ui) => {
         const { deltaX, deltaY } = ui;
@@ -67,7 +68,7 @@ const SceneWindow = (props) => {
         if (!isClickValid) {
             return;
         }
-        if (!event.shiftKey) {
+        if (!event.ctrlKey) {
             props.setPackageItems((prevPackageItems) => {
                 const newPackageItems = prevPackageItems.map((item, i) => ({
                     ...item,
@@ -87,14 +88,12 @@ const SceneWindow = (props) => {
     // Deselect all elements when clicking outside of the zoomable window
     useEffect(() => {
         const zoomableWindowContainer = zoomableWindowContainerRef.current;
-
+    
         const handleContainerClick = (event) => {
-            // Check if the click occurred on a draggable element
             const isDraggableElement = event.target.classList.contains('example-item');
-
+    
             if (!isDraggableElement) {
-                // Deselect all elements
-                props.setPackageItems((prevPackageItems) =>
+                setPackageItems((prevPackageItems) =>
                     prevPackageItems.map((item) => ({
                         ...item,
                         selected: false,
@@ -102,13 +101,13 @@ const SceneWindow = (props) => {
                 );
             }
         };
-
+    
         zoomableWindowContainer.addEventListener('click', handleContainerClick);
-
+    
         return () => {
             zoomableWindowContainer.removeEventListener('click', handleContainerClick);
         };
-    }, []);
+    }, [setPackageItems]);
 
     return (
         <>
