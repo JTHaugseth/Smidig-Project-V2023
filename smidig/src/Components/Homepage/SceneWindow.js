@@ -45,17 +45,6 @@ const SceneWindow = (props) => {
         const scaledDeltaX = deltaX * zoomFactor;
         const scaledDeltaY = deltaY * zoomFactor;
 
-        // 01 - Old code that only moved the clicked element
-        // props.setPackageItems((prevPackageItems) => {
-        //     const newPackageItems = [...prevPackageItems];
-        //     newPackageItems[index].position = {
-        //         x: newPackageItems[index].position.x + scaledDeltaX,
-        //         y: newPackageItems[index].position.y + scaledDeltaY,
-        //     };
-        //     return newPackageItems;
-        // });
-
-        // 02 - New code that moves all selected elements
         props.setPackageItems((prevPackageItems) => {
             return prevPackageItems.map((item, i) => {
                 if (i === index || item.selected) {

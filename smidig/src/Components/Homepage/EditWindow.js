@@ -12,6 +12,7 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
     const [inputTextColor, setInputTextColor] = useState(textColor);
     const [inputBackgroundColor, setInputBackgroundColor] = useState(backgroundColor);
 
+    // Updates buttons when clicking on them
     useEffect(() => {
         const editWindow = editWindowRef.current;
         const handleEditWindowClick = (event) => {
@@ -28,7 +29,6 @@ const EditWindow = ({ packageItems, setPackageItems }) => {
             editWindow.removeEventListener('click', handleEditWindowClick);
         };
     }, []);
-
 
     const RemoveButton = ({ index }) => {
         const handleRemove = () => {

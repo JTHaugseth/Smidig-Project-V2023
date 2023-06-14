@@ -1,6 +1,5 @@
 import { OverlayIcon, SoundIcon, EffectIcon } from "../Icons";
 import { useState } from 'react';
-import MyItems from "../MyItems";
 import '../../Assets/Styles/Homepage/PackagesWindow.css';
 
 const ToolbarItem = (props) => {
