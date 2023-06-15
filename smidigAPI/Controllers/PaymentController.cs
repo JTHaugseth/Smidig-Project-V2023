@@ -12,6 +12,7 @@ using smidigAPI.Collection;
 
 namespace YourNamespace.Controllers
 {
+    // The PaymentController connects to the Stripe-API to add payments to our website
     [ApiController]
     [Route("api/payment")]
     public class PaymentController : ControllerBase

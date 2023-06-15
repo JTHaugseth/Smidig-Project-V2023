@@ -62,6 +62,7 @@ const Ailearning = () => {
     }
   };
 
+  // Adds the message 
   const addMessageToChat = (messageContent, role) => {
     setPreviousChats((prevChats) => [
       ...prevChats,
@@ -69,10 +70,12 @@ const Ailearning = () => {
     ]);
   }
 
+  // Scrolls to the bottom when a new text appears
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Adds the AI response 
   useEffect(() => {
     if (message) {
       addMessageToChat(message.content, "AI");
@@ -83,6 +86,7 @@ const Ailearning = () => {
     scrollToBottom();
   }, [previousChats]);
 
+  // TypingIndicator is its own component that adds a "loading" tag in the AI's response when we wait for it to get its response. 
   const TypingIndicator = () => {
     const [dots, setDots] = useState('.');
 

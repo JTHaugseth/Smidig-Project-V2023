@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace smidigAPI.Controllers
 {
+    // The CompletionsController connects to the Open AI API to give us access to AI.
     [Route("api/[controller]")]
     [ApiController]
     public class CompletionsController : ControllerBase

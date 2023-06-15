@@ -7,6 +7,7 @@ namespace smidigAPI.Controllers;
 [ApiController]
 [Route("[Controller]")]
 
+// StoreItemController lets us connect to the StoreService which in turn lets us connect to our database. 
 public class StoreItemController : ControllerBase {
     private readonly ILogger<StoreItemController> _logger;
     private readonly StoreService _storeService;
